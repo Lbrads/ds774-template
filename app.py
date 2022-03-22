@@ -44,8 +44,8 @@ def contact():
     else:
         return render_template('contact.html', message=message)
 
-@app.route("/admin", methods=['GET', 'POST'])
-def admin():
+@app.route("/issues", methods=['GET', 'POST'])
+def issues():
     error = ''
     records = ''
     print(request)

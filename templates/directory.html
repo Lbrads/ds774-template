@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% set active_page = "directory" %}
+
+{% block title %}<title>Directory</title>{% endblock %}
+{% block content %}
+<!-- container for tablular structure: 1 row -->
+<div class="container">
+  <div class="row">
+
+    <!-- column 1 -->
+    <div class="col-sm-3">
+      <h3>Employees</h3>
+      <p>Luke Bradley</p>
+      <p>Tony Stark</p>
+      <p>Dante Smith</p>
+      <p>Nancy Kate</p>
+      <p>Coleman Stolberg</p>
+    </div>
+    
+
+      <!-- column 2 -->
+    <div class="col-sm-3">
+      <h3>Job Title(s)</h3>
+      <p>CEO</p>
+      <p>Head of Marketing</p>
+      <p>Head of Sales</p>
+      <p>Salesperson</p>
+      <p>Front of Desk</p>
+    </div>
+      <!-- column 3 -->
+    <div class="col-sm-3">
+      <h3>Email Address</h3>
+      <p>luke@email.com</p>
+      <p>tony@email.com</p>
+      <p>Dante@email.com</p>
+      <p>Nancy@email.com</p>
+      <p>coleman@email.com</p>
+    </div>
+      <!-- column 4 -->
+    <div class="col-sm-3">
+      <h3>Phone Number</h3>
+      <p>(603) 380-2020</p>
+      <p>(603) 964-1738</p>
+      <p>(603) 860-7777</p>
+      <p>(603) 860-4020</p>
+      <p>(603) 791-9438</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

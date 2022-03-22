@@ -81,7 +81,7 @@ def issues():
         records = get_records()
 
     # return the admin page, showing any message or data that we may have
-    return render_template('admin.html', error = error, records = records)
+    return render_template('issues.html', error = error, records = records)
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -97,7 +97,7 @@ def register():
         if get_user(username):
             new_id = add_user(username, password)
             error = "Registration sucessful. Please login"
-            return render_template('admin.html', error = error)
+            return render_template('issues.html', error = error)
         else:
             error = f"Username {username} not available"
         
@@ -116,14 +116,14 @@ def edit():
             message = request.form['message']
             print(fname, lname, eaddress, message)
             edit_record(msg_id, fname, lname, eaddress, message)
-            return redirect('/admin')
+            return redirect('/issues')
 
         elif request.form.get('edit') == 'cancel':
-            return redirect('/admin')
+            return redirect('/issues')
         
         elif request.form.get('admin') == 'Delete':
             delete_record(msg_id)
-            return redirect('/admin')
+            return redirect('/issues')
 
 
     entry = get_single_record(msg_id)

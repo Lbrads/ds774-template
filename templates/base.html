@@ -26,13 +26,13 @@
   <!-- jumbotron -->
   <div class="jumbotron text-center">
     <!-- Your Image here -->
-    <img src="{{url_for('static',filename='UNH.png')}}" alt="">
+    <img src="{{url_for('static',filename='e-business logo.jpeg')}}" alt="">
 
     <!-- rounded -->
-    <!-- <img src="{{url_for('static',filename='UNH.png')}}" class="rounded-circle" alt=""> -->
+    <!-- <img src="{{url_for('static',filename='e-business logo.jpeg')}}" class="rounded-circle" alt=""> -->
 
-    <h1>Your Name</h1>
-    <p>This site is all about ME!</p>
+    <h1>Luke Bradley</h1>
+    <p>Bradley Ski Company</p>
   </div>
 
 
@@ -53,7 +53,8 @@
 
     {% set navigation_bar = [
         (url_for('home'), 'home', 'Home'),
-        (url_for('courses'), 'courses', 'Courses'),
+        (url_for('documents'), 'documents', 'Documents'),
+        (url_for('announcements'), 'announcements', 'Announcements'),
         (url_for('contact'), 'contact', 'Contact'),
         (url_for('admin'), 'admin', 'Admin')
     ] -%}
@@ -78,7 +79,7 @@
 <footer class="footer text-center">
   <!-- Copyright -->
   <div class="container">
-        <span class="text-muted">&copy;Your Name 2022</span>
+        <span class="text-muted">&copy;Luke Bradley 2022</span>
   </div>
 </footer>
 

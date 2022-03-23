@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-{% block title %}
-{% endblock %}
+  {% block title %}
+  {% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Sytle sheets -->
+  <!-- Sytle sheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- JS for interactive Elements -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!-- JS for interactive Elements -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
   <!-- Icons  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
@@ -21,68 +23,69 @@
 </head>
 
 <body>
-    <main role="main">
+  <main role="main">
 
-  <!-- jumbotron -->
-  <div class="jumbotron text-center">
-    <!-- Your Image here -->
-    <img src="Logo.png" style="width:300px; height:320px;" class="rounded-circle">
+    <!-- jumbotron -->
+    <div class="jumbotron text-center">
+      <!-- Your Image here -->
+      <img src="https://www.tetongravity.com/forums/attachment.php?attachmentid=397682&d=1640096416&thumb=1"
+        style="width:300px; height:320px;" class="rounded-circle">
 
-    <!-- rounded -->
-    <!-- <img src="{{url_for('static',filename='Logo.png')}}" class="rounded-circle" alt=""> -->
+      <!-- rounded -->
+      <!-- <img src="{{url_for('static',filename='https://www.tetongravity.com/forums/attachment.php?attachmentid=397682&d=1640096416&thumb=1')}}" class="rounded-circle" alt=""> -->
 
-    <h1>Bradley Ski Company</h1>
-    <p>Find how you want to hit the slopes</p>
-  </div>
-
-
-  <!-- navbar -->
-
-  <!-- UNH Color -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #8597b9;"> 
-  
-  <!-- Standard Bootstrap -->
-  <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary"> -->
-
-    <!-- Button for 'Hamburger' menu when on small screens -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <!-- Navigation Bar Links, Update as Necessary for your pages -->
-
-    {% set navigation_bar = [
-        (url_for('home'), 'home', 'Home'),
-        (url_for('documents'), 'documents', 'Documents'),
-        (url_for('announcements'), 'announcements', 'Announcements'),
-        (url_for('directory'), 'directory', 'Directory'),
-        (url_for('events'), 'events', 'Events'),
-        (url_for('issues'), 'issues', 'Issues')
-    ] -%}
-    <!-- Loop to set proper link active in Navbar -->
-    {% set active_page = active_page|default('home') -%}
-    <div class="collapse navbar-collapse" id="navbar">
-    <div class="navbar-nav mr-auto">
-        {% for href, id, caption in navigation_bar %}
-        <a {% if id == active_page %} class="nav-link active" 
-        {% elif id != active_page %} class="nav-link"
-        {% endif %}href="{{ href|e }}">{{ caption|e }}</a>
-        {% endfor %}
-      </div>
+      <h1>Bradley Ski Company</h1>
+      <p>Find how you want to hit the slopes</p>
     </div>
-  </nav>
 
-  {% block content %}
-  {% endblock %}
 
-</main>
+    <!-- navbar -->
+
+    <!-- UNH Color -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #8597b9;">
+
+      <!-- Standard Bootstrap -->
+      <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary"> -->
+
+      <!-- Button for 'Hamburger' menu when on small screens -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Bar Links, Update as Necessary for your pages -->
+
+      {% set navigation_bar = [
+      (url_for('home'), 'home', 'Home'),
+      (url_for('documents'), 'documents', 'Documents'),
+      (url_for('announcements'), 'announcements', 'Announcements'),
+      (url_for('directory'), 'directory', 'Directory'),
+      (url_for('events'), 'events', 'Events'),
+      (url_for('issues'), 'issues', 'Issues')
+      ] -%}
+      <!-- Loop to set proper link active in Navbar -->
+      {% set active_page = active_page|default('home') -%}
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav mr-auto">
+          {% for href, id, caption in navigation_bar %}
+          <a {% if id==active_page %} class="nav-link active" {% elif id !=active_page %} class="nav-link" {% endif
+            %}href="{{ href|e }}">{{ caption|e }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+  </main>
   <!-- Footer -->
-<footer class="footer text-center">
-  <!-- Copyright -->
-  <div class="container">
-        <span class="text-muted">&copy;Luke Bradley 2022</span>
-  </div>
-</footer>
+  <footer class="footer text-center">
+    <!-- Copyright -->
+    <div class="container">
+      <span class="text-muted">&copy;Luke Bradley 2022</span>
+    </div>
+  </footer>
 
 </body>
 
